@@ -1,0 +1,174 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#loading-screen {
+    position: fixed;
+    inset: 0;
+
+    background: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 99999;
+}
+
+#loading-screen > img {
+    width: 30vw;
+}
+
+.Game {
+    width: 100%;
+    height: 100vh;
+}
+
+#startScreen {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 999;
+}
+
+#bgVideo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    filter:
+    blur(6px)
+    brightness(0.5)
+    saturate(1.2);
+}
+
+#overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(0,0,0,0.35);
+}
+
+#gameTitle {
+    width: 650px;
+    max-width: 90%;
+
+    filter:
+        drop-shadow(0 0 15px orange)
+        drop-shadow(0 0 30px red);
+
+    animation: floatTitle 3s ease-in-out infinite;
+}
+
+@keyframes floatTitle {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+#startBtn {
+
+    background: none;
+    border: none;
+    outline: none;
+
+    box-shadow: none;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    padding: 0;
+
+    color: #ff9d00;
+
+    font-size: 3rem;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    cursor: pointer;
+
+    text-shadow:
+        0 0 5px orange,
+        0 0 15px orange,
+        0 0 30px red,
+        0 0 60px red;
+
+    transition: 0.25s;
+
+    animation: glowPulse 2s infinite ease-in-out;
+}
+
+#startBtn:hover {
+
+    transform:
+        scale(1.12)
+        translateY(-4px);
+
+    letter-spacing: 8px;
+
+    text-shadow:
+        0 0 10px orange,
+        0 0 25px orange,
+        0 0 50px red,
+        0 0 90px red;
+}
+
+#startBtn:active {
+    transform: scale(0.95);
+}
+@keyframes glowPulse {
+
+    0% {
+
+        opacity: 0.8;
+    }
+
+    50% {
+
+        opacity: 1;
+    }
+
+    100% {
+
+        opacity: 0.8;
+    }
+}
+
+#board {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+

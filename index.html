@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Fuppy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loading-screen">
+        <img src="./Assets/loading.gif" alt="">
+    </div>
+    <div id="startScreen">
+        <video src="./Assets/startup.mp4" autoplay muted loop id="bgVideo"></video>
+
+        <div id="overlay">
+            <img src="./Assets/BooTitle.png" id="gameTitle">
+            <button id="startBtn">START GAME</button>
+        </div>
+    
+    </div>
+
+
+    <div class="Game">
+        <div id="map"></div>
+
+        <canvas id="board"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
