@@ -19,7 +19,7 @@ function sleep(ms=100) {
     });
 }
 
-sleep(2000).then(() => {
+sleep(6000).then(() => {
 
     document.getElementById("loading-screen").style.display = "none";
 
@@ -315,6 +315,23 @@ function resizeGame() {
 window.addEventListener("resize", resizeGame);
 
 
+function resetGame() {
+
+    gameOver = false;
+
+    score = 0;
+
+    Bird.y = Board.height / 2;
+
+    Bird.velocityY = 0;
+
+    topPIPE.x = Board.width;
+    bottomPIPE.x = Board.width;
+
+    generatePipePos();
+
+    gameLoop();
+}
 
 function gameLoop() {
 
@@ -366,6 +383,10 @@ document.addEventListener("keydown", (e) => {
         Bird.velocityY = Bird.jumpPower;
     }
 
+    if (gameOver && e.code === "KeyR") {
+
+        resetGame();
+    }
     if (e.key.toLowerCase() === "f") {
 
         if (!document.fullscreenElement) {
