@@ -126,7 +126,7 @@ const Bird = {
     height: 0,
     velocityY : 0,
     gravity : 0.10,
-    jumpPower : -4
+    jumpPower : -3
     
 };
 
@@ -168,7 +168,7 @@ bIMG.onload = () => {
 
 let topPipeY = 0;
 let bottomPipeY = 0;
-const velocityX = -8;
+const velocityX = -4;
 const gap = 200;
 let gameOver = false;
 let score = 0;
@@ -176,6 +176,7 @@ const birdHitboxPadding = 20;
 const pipeHitboxPadding = 10;
 const topBorderPadding = 10;
 const bottomBorderPadding = 15;
+
 
 let generatePipePos = () => {
     
@@ -376,4 +377,8 @@ document.addEventListener("keydown", (e) => {
             document.exitFullscreen();
         }
     }
+});
+
+document.addEventListener("click", () => {
+    Bird.velocityY = Bird.jumpPower;
 });
